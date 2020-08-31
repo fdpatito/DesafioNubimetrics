@@ -1,13 +1,12 @@
 import json
 import requests
 import pandas as pd
-from os import mkdir,makedirs, getcwd
+from os import mkdir,makedirs
 from datetime import date as dt
 
 
 site_id = "MLA"
 category_id = "MLA1144"
-current_dir = getcwd()
 fecha = dt.today().strftime("%Y/%m/%d")
 
 # Desafio 2
@@ -15,7 +14,7 @@ fecha = dt.today().strftime("%Y/%m/%d")
 r = requests.get(f"https://api.mercadolibre.com/sites/{site_id}/search?category={category_id}")
 json_data = r.json()
 json_folder = ''.join(["search","json",fecha.split('/')[0], fecha.split('/')[1]])
-json_name = '/'.join([current_dir, json_folder, "data.json"])
+json_name = '/'.join([json_folder, "data.json"])
 
 # Creo la carpeta para el archivo
 try:
