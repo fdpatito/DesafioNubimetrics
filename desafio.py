@@ -36,11 +36,11 @@ with open(json_name, "r") as f:
 df = pd.DataFrame(data["results"])
 
 # Genero el arbol de directorios y creo el archivo final
-folders_tree = '/'.join([site_id, fecha]) 
-csv_name = '/'.join([folders_tree, "data.csv"])
+csv_folders = '/'.join([site_id, fecha]) 
+csv_name = '/'.join([csv_folders, "data.csv"])
 
 try:
-    makedirs(folders_tree)
+    makedirs(csv_folders)
 except FileExistsError:
     pass
 
