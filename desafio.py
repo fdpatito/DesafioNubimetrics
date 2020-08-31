@@ -30,10 +30,10 @@ with open(json_name, 'w+') as outputfile:
 # Desafio 3
 # Obtengo los datos del archivo creado anteriormente
 with open(json_name, "r") as f:
-    json_file = json.load(f)
+    data = json.load(f)
 
 # Extraigo y guardo los datos que se necesitan en un dataframe
-df = pd.DataFrame(json_file["results"])
+df = pd.DataFrame(data["results"])
 
 # Genero el arbol de directorios y creo el archivo final
 folders_tree = '/'.join([site_id, fecha]) 
